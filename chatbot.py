@@ -1,18 +1,15 @@
 import streamlit as st
 import google.generativeai as genai
-from keywords import KEYWORDS  # Import từ khóa từ file keywords.py
+from keywords import KEYWORDS  
 
-# Cấu hình API
-genai.configure(api_key="AIzaSyBcLBvfn49kChzPIeF9L4RJ7b9yut8y7N0")
+genai.configure(api_key="API_KEY_GOOGLE_CONSOLE")
 
-# Khởi tạo các biến toàn cục
 def init_session_state():
     if "chat" not in st.session_state:
         st.session_state.chat = None
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
-# Khởi tạo mô hình AI
 def initialize_model():
     try:
         model = genai.GenerativeModel(
@@ -20,7 +17,7 @@ def initialize_model():
             generation_config={
                 "temperature": 0.9,
                 "top_p": 0.9,
-                "max_output_tokens": 780,  # Giới hạn câu trả lời ngắn
+                "max_output_tokens": 780,  
             },
         )
         return model
@@ -28,10 +25,8 @@ def initialize_model():
         st.error(f"Lỗi khi khởi tạo mô hình: {str(e)}")
         return None
 
-# Xử lý câu hỏi và trả lời
 def ask_question(prompt):
     try:
-        # Sử dụng danh sách từ khóa từ file keywords.py
         if any(keyword in prompt.lower() for keyword in KEYWORDS):
             if st.session_state.chat is None:
                 st.session_state.chat = initialize_model().start_chat(history=[])
@@ -42,8 +37,7 @@ def ask_question(prompt):
     except Exception as e:
         st.error(f"Lỗi khi gửi câu hỏi: {str(e)}")
         return "❌ Có lỗi xảy ra khi xử lý câu hỏi của bạn."
-
-# Hiển thị giao diện Streamlit
+#---------
 def main():
     st.set_page_config(page_title="🏋️‍♂️ PT Chatbot", page_icon="🤖", layout="wide")
 
@@ -64,14 +58,14 @@ def main():
     init_session_state()
 
     st.title("🏋️‍♂️ Chatbot hướng dẫn về thể hình chuyên nghiệp")
-    st.sidebar.markdown("## BOT CHAT PT")
+    st.sidebar.markdown("BOT CHAT PT v1.3")
     selected_mode = st.sidebar.radio(
         "Các Chức Năng Chính",
         options=["Gợi ý bài tập", "Tư vấn dinh dưỡng", "Trò chuyện với PT"],
         key="selected_mode",
     )
 
-    # Gợi ý bài tập
+    # ***Gợi ý bài tập
     if selected_mode == "Gợi ý bài tập":
         st.header("📋 Gợi ý bài tập")
         muscle_group = st.selectbox("Chọn nhóm cơ", ["Tay", "Vai", "Ngực", "Bụng", "Chân"," Mông ", "Giảm mỡ bụng", "Cardio"], key="muscle_group")
@@ -79,7 +73,7 @@ def main():
             response = ask_question(f"Gợi ý bài tập cho nhóm cơ {muscle_group}.")
             st.session_state.messages.append({"role": "assistant", "content": response})
 
-    # Tư vấn dinh dưỡng
+    # ***Tư vấn dinh dưỡng
     elif selected_mode == "Tư vấn dinh dưỡng":
         st.header("🍎 Tư vấn chế độ dinh dưỡng")
         weight = st.number_input("Nhập cân nặng (kg):", min_value=60, max_value=200, step=1, key="weight")
@@ -93,7 +87,7 @@ def main():
             )
             st.session_state.messages.append({"role": "assistant", "content": response})
 
-    # Trò chuyện với PT
+    # ***Trò chuyện với PT
     elif selected_mode == "Trò chuyện với PT":
         st.header("💬 Trò chuyện với PT")
         user_message = st.text_input("Nhập câu hỏi của bạn:", key="user_input")
@@ -101,8 +95,7 @@ def main():
             response = ask_question(user_message)
             st.session_state.messages.append({"role": "user", "content": user_message})
             st.session_state.messages.append({"role": "assistant", "content": response})
-
-    # Hiển thị lịch sử chat
+#------------------
     st.markdown("---")
     st.header("📜 Lịch sử trò chuyện")
     for message in st.session_state.messages:
@@ -111,6 +104,17 @@ def main():
     if st.button("🗑️ Xóa lịch sử trò chuyện"):
         st.session_state.messages = []
         st.success("Lịch sử trò chuyện đã được xóa.")
+###------ @@
+    st.sidebar.markdown(
+        """
+        <br><br>
+        <p style="font-size: 10px; color: gray; text-align: center;">
+            &copy; 2024 PT Chatbot made by plgztn.
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
 
 if __name__ == "__main__":
     main()
+#v1.3 update 11/18/2024

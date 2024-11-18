@@ -1,27 +1,20 @@
-/* style.css */
-
-/* Cấu hình chung cho nền ứng dụng */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #FDCF76 !important; /* Thêm !important để ghi đè các thuộc tính trước */
+    background-color: #FDCF76 !important;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
-
-
-/* Sidebar */
 .css-ffhzg2 {
-    background-color: #F3D1DC; /* Màu nền sidebar xanh nhẹ */
+    background-color: #F3D1DC;
     color: #F3D1DC;
 }
 
 .css-ffhzg2 .css-1v0mbdj {
-    color: #ffffff; /* Màu chữ sidebar */
+    color: #ffffff;
 }
 
-/* Tiêu đề chính */
 .stApp h1 {
     color: #4e73df;
     font-size: 2.5em;
@@ -31,7 +24,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Tiêu đề các section */
 .stHeader {
     color: #4e73df;
     font-size: 1.7em;
@@ -39,14 +31,13 @@ body {
     text-align: center;
 }
 
-/* Style cho các nút điều hướng và button */
 .stButton, .css-1d391kg {
-    background-color: #A0B4F2; /* Màu nền nút - Xanh nhạt */
+    background-color: #A0B4F2;
     color: #F3D1DC;
-    border-radius: 6px; /* Giảm radius để nút nhỏ gọn hơn */
-    padding: 6px 14px; /* Giảm padding để nút nhỏ lại */
+    border-radius: 6px;
+    padding: 6px 14px;
     font-weight: bold;
-    font-size: 0.9em; /* Giảm font-size */
+    font-size: 0.9em;
     border: none;
     transition: background-color 0.3s ease;
     text-align: center;
@@ -54,10 +45,9 @@ body {
 }
 
 .stButton:hover, .css-1d391kg:hover {
-    background-color: #7A8CFF; /* Màu nền khi hover */
+    background-color: #7A8CFF;
 }
 
-/* Inputs */
 .stTextInput, .stNumberInput, .stSelectbox {
     background-color: #50BFA0;
     border-radius: 8px;
@@ -73,7 +63,6 @@ body {
     outline: none;
 }
 
-/* Style cho các phần tử văn bản */
 .stMarkdown, .css-1vbd53f {
     font-size: 1em;
     line-height: 1.6;
@@ -90,7 +79,6 @@ body {
     text-decoration: underline;
 }
 
-/* Khung chat và tin nhắn */
 .stChatMessage {
     background-color: #F3D1DC;
     border-radius: 10px;
@@ -99,21 +87,19 @@ body {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Lịch sử trò chuyện */
 .stMarkdown hr {
     border: 0;
     border-top: 1px solid #ddd;
     margin: 20px 0;
 }
 
-/* Xóa lịch sử trò chuyện */
 .stButton {
-    background-color: #f44336; /* Màu đỏ cho nút xóa lịch sử */
+    background-color: #f44336;
     color: white;
-    padding: 6px 14px; /* Giảm padding để nút nhỏ lại */
+    padding: 6px 14px;
     border-radius: 6px;
     font-weight: bold;
-    font-size: 0.9em; /* Giảm font-size */
+    font-size: 0.9em;
     transition: background-color 0.3s ease;
     border: none;
 }
@@ -122,12 +108,10 @@ body {
     background-color: #FDCF76;
 }
 
-/* Điều chỉnh độ rộng cho các button và inputs */
 .stTextInput input, .stNumberInput input, .stSelectbox select, .stButton {
     width: 100%;
 }
 
-/* Footer (nếu có) */
 .stFooter {
     color: #7f7f7f;
     text-align: center;
@@ -136,26 +120,24 @@ body {
     padding: 10px;
     background-color: #f9f9f9;
 }
-/* Style cho các nút xác nhận và gửi câu hỏi */
+
 .stButton, .css-1d391kg {
-    background-color: #A0B4F2; /* Màu nền mới cho nút */
-    color: #ffffff; /* Màu chữ trắng */
-    border: 2px solid #A0B4F2; /* Viền mỏng với màu #A0B4F2 */
-    border-radius: 8px; /* Đổi viền tròn cho nút */
-    padding: 6px 16px; /* Giảm kích thước padding */
-    font-weight: 600; /* Tăng độ đậm của chữ */
-    font-size: 0.9em; /* Giảm kích thước chữ */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Thêm hiệu ứng khi hover */
+    background-color: #A0B4F2;
+    color: #ffffff;
+    border: 2px solid #A0B4F2;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hiệu ứng hover cho các nút */
 .stButton:hover, .css-1d391kg:hover {
-    background-color: #8A9BF1; /* Màu nền khi hover */
-    border-color: #8A9BF1; /* Màu viền khi hover */
-    transform: scale(1.05); /* Tăng kích thước nhẹ khi hover */
+    background-color: #8A9BF1;
+    border-color: #8A9BF1;
+    transform: scale(1.05);
 }
 
-/* Cải tiến cho nút "Xóa lịch sử trò chuyện" */
 .stButton.stButton:hover {
     background-color: #FDCF76;
     border-color: black;
