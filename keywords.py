@@ -4,3 +4,4 @@ KEYWORDS = [
     "luyện tập", "thon gọn", "giảm cân", "tăng cân", "Giảm mỡ bụng", "Cardio", "mỡ", 
     "giảm", "cân nặng", "cân đối", "tập", "tập luyện", "cơ", "cơ bắp"
 ]
+#v1.3
