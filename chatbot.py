@@ -1,5 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
+from keywords import KEYWORDS  # Import từ khóa từ file keywords.py
 
 # Cấu hình API
 genai.configure(api_key="AIzaSyBcLBvfn49kChzPIeF9L4RJ7b9yut8y7N0")
@@ -19,7 +20,7 @@ def initialize_model():
             generation_config={
                 "temperature": 0.9,
                 "top_p": 0.9,
-                "max_output_tokens": 760,  # Giới hạn câu trả lời ngắn
+                "max_output_tokens": 780,  # Giới hạn câu trả lời ngắn
             },
         )
         return model
@@ -30,8 +31,8 @@ def initialize_model():
 # Xử lý câu hỏi và trả lời
 def ask_question(prompt):
     try:
-        keywords = ["gym", "dinh dưỡng", "bài tập", "tập luyện", "tay", "vai", "ngực", "bụng", "chân", "mông", "bữa ăn", "calo ", "đồ ăn", "bữa ăn ", "luyện tập", "thon gọn","giảm cân", "tăng cân","Giảm mỡ bụng", "Cardio", "mỡ", "giảm", "cân nặng"]
-        if any(keyword in prompt.lower() for keyword in keywords):
+        # Sử dụng danh sách từ khóa từ file keywords.py
+        if any(keyword in prompt.lower() for keyword in KEYWORDS):
             if st.session_state.chat is None:
                 st.session_state.chat = initialize_model().start_chat(history=[])
             response = st.session_state.chat.send_message(prompt)
@@ -42,15 +43,28 @@ def ask_question(prompt):
         st.error(f"Lỗi khi gửi câu hỏi: {str(e)}")
         return "❌ Có lỗi xảy ra khi xử lý câu hỏi của bạn."
 
-
 # Hiển thị giao diện Streamlit
 def main():
     st.set_page_config(page_title="🏋️‍♂️ PT Chatbot", page_icon="🤖", layout="wide")
 
+    st.markdown(
+    """
+    <style>
+    .css-1v0mbdj {
+        background-color: #FDCF76 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+    
+    with open("style.css", encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
     init_session_state()
 
     st.title("🏋️‍♂️ Chatbot hướng dẫn về thể hình chuyên nghiệp")
-    st.sidebar.markdown("## Chọn chế độ")
+    st.sidebar.markdown("## BOT CHAT PT")
     selected_mode = st.sidebar.radio(
         "Các Chức Năng Chính",
         options=["Gợi ý bài tập", "Tư vấn dinh dưỡng", "Trò chuyện với PT"],
@@ -75,7 +89,7 @@ def main():
 
         if st.button("Tư vấn chế độ dinh dưỡng"):
             response = ask_question(
-                f"Tôi nặng {weight}kg, cao {height}cm, {age} tuổi, và muốn {goal.lower()}. Hãy tư vấn chế độ dinh dưỡng cho tôi, 1 cách vừa đủ hiểu và cũng không quá ngắn, sau đó đưa ra 3 bữa chính tôi nên ăn trong ngày"
+                f"Tôi nặng {weight}kg, cao {height}cm, {age} tuổi, và muốn {goal.lower()}. Hãy tư vấn chế độ dinh dưỡng cho tôi, 1 cách vừa đủ hiểu và dài vừa đủ với token của API, sau đó đưa ra 3 bữa chính tôi nên ăn trong ngày"
             )
             st.session_state.messages.append({"role": "assistant", "content": response})
 
