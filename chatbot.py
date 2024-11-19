@@ -58,7 +58,7 @@ def main():
     init_session_state()
 
     st.title("🏋️‍♂️ Chatbot hướng dẫn về thể hình chuyên nghiệp")
-    st.sidebar.markdown("BOT CHAT PT v1.4")
+    st.sidebar.markdown("BOT CHAT PT v1.4.6")
     selected_mode = st.sidebar.radio(
         "Các Chức Năng Chính",
         options=["Gợi ý bài tập", "Tư vấn dinh dưỡng", "Trò chuyện với PT"],
@@ -76,9 +76,9 @@ def main():
     # ***Tư vấn dinh dưỡng
     elif selected_mode == "Tư vấn dinh dưỡng":
         st.header("🍎 Tư vấn chế độ dinh dưỡng")
-        weight = st.number_input("Nhập cân nặng (kg):", min_value=60, max_value=200, step=1, key="weight")
-        height = st.number_input("Nhập chiều cao (cm):", min_value=170, max_value=250, step=1, key="height")
-        age = st.number_input("Nhập độ tuổi:", min_value=10, max_value=100, step=1, key="age")
+        weight = st.number_input("Nhập cân nặng (kg):", min_value=30, max_value=200, step=1, key="weight")
+        height = st.number_input("Nhập chiều cao (cm):", min_value=100, max_value=250, step=1, key="height")
+        age = st.number_input("Nhập độ tuổi:", min_value=5, max_value=100, step=1, key="age")
         goal = st.selectbox("Mục tiêu của bạn:", ["Giảm cân", "Tăng cân", "Duy trì cân nặng"], key="goal")
 
         if st.button("Tư vấn chế độ dinh dưỡng"):
@@ -117,4 +117,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-#v1.4.5 update 11/19/2024-
+#v1.4.6 update 11/19/2024-
