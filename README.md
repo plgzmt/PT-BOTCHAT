@@ -10,4 +10,4 @@
 
 ## Version: 1.4.5
 update date: 19/11/2024
-### Tác giả: plgzmt - LMT - HL
+### Tác giả: plgzmt - LMT - HL **[plgzmt](https://www.facebook.com/ngcuuphilongg?locale=vi_VN)**
