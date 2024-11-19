@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 from keywords import KEYWORDS  
 
-genai.configure(api_key="API_KEY_GOOGLE_CONSOLE")
+genai.configure(api_key="AIzaSyBcLBvfn49kChzPIeF9L4RJ7b9yut8y7N0") #API_KEY_FREE_DONT_WORRY =)))))
 
 def init_session_state():
     if "chat" not in st.session_state:
@@ -58,7 +58,7 @@ def main():
     init_session_state()
 
     st.title("🏋️‍♂️ Chatbot hướng dẫn về thể hình chuyên nghiệp")
-    st.sidebar.markdown("BOT CHAT PT v1.3")
+    st.sidebar.markdown("BOT CHAT PT v1.4")
     selected_mode = st.sidebar.radio(
         "Các Chức Năng Chính",
         options=["Gợi ý bài tập", "Tư vấn dinh dưỡng", "Trò chuyện với PT"],
@@ -83,7 +83,7 @@ def main():
 
         if st.button("Tư vấn chế độ dinh dưỡng"):
             response = ask_question(
-                f"Tôi nặng {weight}kg, cao {height}cm, {age} tuổi, và muốn {goal.lower()}. Hãy tư vấn chế độ dinh dưỡng cho tôi, 1 cách vừa đủ hiểu và dài vừa đủ với token của API, sau đó đưa ra 3 bữa chính tôi nên ăn trong ngày"
+                f"Tôi nặng {weight}kg, cao {height}cm, {age} tuổi, và muốn {goal.lower()}. Hãy tư vấn chế độ dinh dưỡng cho tôi 1 cách ngắn gọn và đưa ra thực đơn 3 bữa tôi nên ăn trong ngày."
             )
             st.session_state.messages.append({"role": "assistant", "content": response})
 
@@ -117,4 +117,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-#v1.3 update 11/18/2024
+#v1.4 update 11/19/2024
