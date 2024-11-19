@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 from keywords import KEYWORDS  
 
-genai.configure(api_key="AIzaSyBcLBvfn49kChzPIeF9L4RJ7b9yut8y7N0") #API_KEY_FREE_DONT_WORRY =)))))
+genai.configure(api_key="AIzaSyBcLBvfn49kChzPIeF9L4RJ7b9yut8y7N0") #API_KEY_FREE_DONT_WORRY =)))))aaaaaaaaaaaaaaaaaaaaaaa
 
 def init_session_state():
     if "chat" not in st.session_state:
@@ -117,4 +117,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-#v1.4 update 11/19/2024
+#v1.4 update 11/19/2024-
