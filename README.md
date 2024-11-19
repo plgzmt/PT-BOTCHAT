@@ -6,7 +6,7 @@
 ☃️Remember to install the streamlit and google gen_ai libraries to be able to use it
 
 ## Demo
-![alt text](1.png)
+![alt text](Demo.png)
 
 ## Version: 1.4.5
 update date: 19/11/2024
