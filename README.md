@@ -10,4 +10,4 @@
 
 ## Version: 1.4.5
 update date: 19/11/2024
-### Tác giả:**[plgzmt](https://www.facebook.com/ngcuuphilongg?locale=vi_VN)** - **[LMT](https://www.facebook.com/profile.php?id=100046322661968&locale=vi_VN)**- **[HL](https://www.facebook.com/dhuwngle?locale=vi_VN)**
+### Tác giả:  **[plgzmt](https://www.facebook.com/ngcuuphilongg?locale=vi_VN)** - **[LMT](https://www.facebook.com/profile.php?id=100046322661968&locale=vi_VN)**- **[HL](https://www.facebook.com/dhuwngle?locale=vi_VN)**
