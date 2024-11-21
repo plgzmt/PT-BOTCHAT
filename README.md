@@ -3,7 +3,8 @@
 
 ☃️This botcchat is created by #Capybara team from HUSC  (Team_9)  
 🎄This API code is free, everyone can use it:))  
-☃️Remember to install the streamlit and google gen_ai libraries to be able to use it
+☃️Remember to install the streamlit and google gen_ai libraries to be able to use it  
+💻 use : streamlit run chatbot.py (to run code)
 
 ## Demo
 ![alt text](Demo.png)
